@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%">
+<head>
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        @font-face {
+            font-family: 'neodgm';
+            src: url(./font/neodgm.woff) format('woff');
+        }
+
+        html {
+            overflow: hidden !important;
+        }
+        body {
+            background-color: black;
+            overflow: hidden !important;
+            font-family: 'neodgm';
+        }
+        #wrap {
+            width: 1920px;
+            height: 1080px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top:-540px;
+            margin-left:-960px;
+        }
+
+        #login {
+            width: 480px;
+            height: 240px;
+            position: absolute;
+	        top: 72%;
+            left: 50%;
+            margin-left: -240px;
+        }
+
+        #id-blank {
+            position:absolute;
+
+            width: 270px;
+            height: 50px;
+
+            top: 30%;
+            left: 50%;
+
+            margin-top: -20px;
+            margin-left: -135px;
+        }
+
+        #pw-blank {
+            position:absolute;
+
+            width: 270px;
+            height: 50px;
+
+            top: 70%;
+            left: 50%;
+
+            margin-top: -20px;
+            margin-left: -135px;
+        }
+
+        #loginButton {
+            background: url("lobbyImg/Login.png") no-repeat;
+            width: 200px;
+            height: 70px;
+            background-size: cover;
+
+            position: absolute;
+            top: 88%;
+            left: 69%;
+
+            margin-top: -30px;
+            margin-left: -100px;
+
+            border: none;
+        }
+
+        #loginButton:hover {
+            background: url("lobbyImg/Login_onMouse.png") no-repeat;
+            width: 200px;
+            height: 70px;
+            background-size: cover;
+
+            position: absolute;
+            top: 88%;
+            left: 69%;
+
+            margin-top: -30px;
+            margin-left: -100px;
+
+            border: none;
+        }
+        #RegisterButton {
+            background: url("lobbyImg/Register.png") no-repeat;
+            width: 200px;
+            height: 41px;
+            background-size: cover;
+
+            position: absolute;
+            top: 88%;
+            left: 31%;
+
+            margin-top: -30px;
+            margin-left: -100px;
+
+            border: none;
+        }
+
+        #RegisterButton:hover {
+            background: url("lobbyImg/Register_onMouse.png") no-repeat;
+            width: 200px;
+            height: 41px;
+            background-size: cover;
+
+            position: absolute;
+            top: 88%;
+            left: 31%;
+
+            margin-top: -30px;
+            margin-left: -100px;
+
+            border: none;
+        }
+
+        #errDialog {
+            position: absolute;
+            width: 300px;
+            height: 140px;
+            background-color: #f4ffef;
+            border: 1px solid black;
+            border-radius: 5px;
+
+            top: 50%;
+            left: 50%;
+            margin-top: -70px;
+            margin-left: -150px;
+        }
+
+        #err_msg {
+            position: absolute;
+            width: 280px;
+            height: 130px;
+            font-size: 25px;
+
+            top: 50%;
+            left: 50%;
+
+            margin-top: -65px;
+            margin-left: -140px;
+            text-align : center;
+        }
+
+        #mButton {
+            position: absolute;
+            width: 80px;
+            height: 40px;
+            background-color: blue;
+            border: 1px black;
+
+            top: 70%;
+            left: 50%;
+            margin-left: -40px;
+            font-size: 10px;
+            color: white;
+            text-align : center;
+        }
+    </style>
+<!-- <script type="module", src="test.js"></script> -->
+
+<meta charset="UTF-8">
+<title>Prototype</title>
+</head>
+<body style="height:100%">
+    <div id="wrap">
+        <div style="width:1920px; height:960px; position:absolute; top: 50%; margin-top: -480px;">
+            <img src="lobbyImg/LoginScreen.png" alt="" width="1920" height="960">
+        </div>
+
+
+        <form id="login">
+            <input type="text" id="id-blank" name="userId" placeholder="Enter ID" style='font-size:25pt; font-family: neodgm' > <br>
+            <input type="password" id="pw-blank" name="userPassword" placeholder="Enter PW" style='font-size:25pt; font-family: neodgm'> <br>
+        </form>
+
+        <input type="button" id="loginButton">
+
+        <input type="button"  id="RegisterButton" onclick="location.href='register.html'">
+    </div>
+    <dialog id="errDialog">
+        <div id="err_msg"></div>
+        <input type="button" id="mButton" value=" 확인 " onclick="closeMsg()">
+    </dialog>
+    <script>
+		function closeMsg(){
+			var dialog = document.getElementById("errDialog");
+			dialog.close();
+		}
+	</script>
+
+    <script type="module", src="login.js"></script>
+</body>
+
+</html>
